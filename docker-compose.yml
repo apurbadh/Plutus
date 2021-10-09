@@ -1,0 +1,19 @@
+version: "3.7"
+
+services:
+
+    database:
+        image: mariadb
+        ports:
+            - "6033:3306"
+        container_name: mysqldb
+        environment:
+            MYSQL_ROOT_PASSWORD: alpha-vega
+            MYSQL_DATABASE: app_db
+            MYSQL_USER: alpha
+            MYSQL_PASSWORD: alpha-vega
+        volumes:
+            - dbdata:/var/lib/mysql
+
+volumes:
+    dbdata:
