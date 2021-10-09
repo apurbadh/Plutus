@@ -3,9 +3,10 @@
 namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Varbox\Exceptions\Handler as VarboxExceptionHandler;
 use Throwable;
 
-class Handler extends ExceptionHandler
+class Handler extends VarboxExceptionHandler
 {
     /**
      * A list of the exception types that are not reported.

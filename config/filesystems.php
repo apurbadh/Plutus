@@ -52,6 +52,24 @@ return [
             'endpoint' => env('AWS_ENDPOINT'),
             'use_path_style_endpoint' => env('AWS_USE_PATH_STYLE_ENDPOINT', false),
         ],
+    'uploads' => [
+        'driver' => 'local',
+        'root' => storage_path('uploads'),
+        'url' => env('APP_URL').'/uploads',
+        'visibility' => 'public',
+    ],
+
+    'wysiwyg' => [
+        'driver' => 'local',
+        'root' => storage_path('wysiwyg'),
+        'url' => env('APP_URL').'/wysiwyg',
+        'visibility' => 'public',
+    ],
+
+    'backups' => [
+        'driver' => 'local',
+        'root' => storage_path('backups'),
+    ],
 
     ],
 

@@ -13,8 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    {{ __('You are logged in!') }}
+                    Your balance is {{ $user->balance->balance }}
                 </div>
             </div>
         </div>
