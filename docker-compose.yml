@@ -8,12 +8,22 @@ services:
             - "6033:3306"
         container_name: mysqldb
         environment:
-            MYSQL_ROOT_PASSWORD: alpha-vega
-            MYSQL_DATABASE: app_db
-            MYSQL_USER: alpha
-            MYSQL_PASSWORD: alpha-vega
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: laravel
+            MYSQL_USER: user
+            MYSQL_PASSWORD: user
         volumes:
             - dbdata:/var/lib/mysql
+
+    laravel:
+        image: php:7.4-fpm
+        ports:
+            - "8000:8000"
+        container_name: laravel_plutus
+        volumes:
+            - ./:/app
+        command: php /app/artisan serve --host 0.0.0.0
+
 
 volumes:
     dbdata:
