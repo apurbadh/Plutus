@@ -15,15 +15,5 @@ services:
         volumes:
             - dbdata:/var/lib/mysql
 
-    laravel:
-        image: php:7.4-fpm
-        ports:
-            - "8000:8000"
-        container_name: laravel_plutus
-        volumes:
-            - ./:/app
-        command: php /app/artisan serve --host 0.0.0.0
-
-
 volumes:
     dbdata:
