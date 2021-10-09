@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class UserBalance extends Model
 {
     use HasFactory;
+
 }

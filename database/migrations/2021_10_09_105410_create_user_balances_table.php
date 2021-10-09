@@ -18,6 +18,9 @@ class CreateUserBalancesTable extends Migration
             $table->unsignedInteger("user_id");
             $table->bigInteger("balance");
             $table->timestamps();
+            $table->foreign("user_id")
+                 ->references("id")->on("users")
+                 ->onDelete("cascade");
         });
     }
 
