@@ -9,14 +9,6 @@
     {!! form_admin()->text('search', 'Keyword', request()->query('search') ?: null) !!}
     <div class="row">
         <div class="col">
-            {!! form_admin()->number('size[0]', 'Size From', request()->query('size')[0] ?: null) !!}
-        </div>
-        <div class="col">
-            {!! form_admin()->number('size[1]', 'Size To', request()->query('size')[1] ?: null) !!}
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
             {!! form_admin()->date('start_date', 'From', request()->query('start_date') ?: null) !!}
         </div>
         <div class="col">
