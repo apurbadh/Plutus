@@ -33,7 +33,7 @@
                         @include('varbox::buttons.download', ['url' => route('admin.uploads.download', $item->getKey())])
                     @endpermission
 
-                    @include('varbox::buttons.view', ['url' => uploaded($item->full_path)->url(), 'attributes' => ['target="_blank"']])
+                    @include('varbox::buttons.view', ['url' => "/uploads/$item->full_path", 'attributes' => ['target="_blank"']])
 
                     @permission('uploads-delete')
                         @include('varbox::buttons.delete', ['url' => route('admin.uploads.destroy', $item->getKey())])
