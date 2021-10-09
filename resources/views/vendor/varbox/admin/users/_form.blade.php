@@ -16,6 +16,8 @@
                 <div class="col-md-6">
                     {!! form_admin()->text('name', 'Name', null, ['required']) !!}
                     {!! form_admin()->text('email', 'Email', null, ['required', 'autocomplete' => 'off']) !!}
+                    {!! form_admin()->text('balance', 'Balance', null, ['required']) !!}
+
                 </div>
                 <div class="col-md-6">
                     {!! form_admin()->password('password', 'Password', ['required', 'placeholder' => 'Leave blank to remain the same', 'autocomplete' => 'off'], true) !!}

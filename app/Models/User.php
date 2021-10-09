@@ -22,7 +22,8 @@ class User extends VarboxUser
         'name',
         'email',
         'password',
-        'active'
+        'active',
+        'balance'
     ];
 
     /**
@@ -45,8 +46,4 @@ class User extends VarboxUser
         'email_verified_at' => 'datetime',
         'active' => 'boolean'
     ];
-
-    function balance(){
-        return $this->hasOne(UserBalance::class);
-    }
 }
