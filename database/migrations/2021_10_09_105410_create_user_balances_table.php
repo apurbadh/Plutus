@@ -15,11 +15,11 @@ class CreateUserBalancesTable extends Migration
     {
         Schema::create('user_balances', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger("user_id");
             $table->bigInteger("balance");
             $table->timestamps();
-            $table->foreign("user_id")
-                 ->references("id")->on("users")
+            $table->foreignId('user_id')
+                 ->references("id")
+                 ->on("users")
                  ->onDelete("cascade");
         });
     }
