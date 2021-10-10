@@ -14,6 +14,9 @@ function HeroSection({
   alt,
   imgStart
 }) {
+    const gotoRegister = () => {
+        window.location = "/register"
+    }
   return (
     <>
       <div
@@ -42,8 +45,8 @@ function HeroSection({
                 >
                   {description}
                 </p>
-                <a herf='/sign-up'>
-                  <Button buttonSize='btn--wide' buttonColor='blue'>
+                <a herf='/register'>
+                  <Button buttonSize='btn--wide' buttonColor='blue' onClick={() => gotoRegister()}>
                     {buttonLabel}
                   </Button>
                 </a>

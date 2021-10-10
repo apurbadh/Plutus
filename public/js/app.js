@@ -2255,6 +2255,11 @@ function HeroSection(_ref) {
       img = _ref.img,
       alt = _ref.alt,
       imgStart = _ref.imgStart;
+
+  var gotoRegister = function gotoRegister() {
+    window.location = "/register";
+  };
+
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
       className: lightBg ? 'home__hero-section' : 'home__hero-section darkBg',
@@ -2280,10 +2285,13 @@ function HeroSection(_ref) {
                 className: lightTextDesc ? 'home__hero-subtitle' : 'home__hero-subtitle dark',
                 children: description
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
-                herf: "/sign-up",
+                herf: "/register",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Button__WEBPACK_IMPORTED_MODULE_2__.Button, {
                   buttonSize: "btn--wide",
                   buttonColor: "blue",
+                  onClick: function onClick() {
+                    return gotoRegister();
+                  },
                   children: buttonLabel
                 })
               })]
