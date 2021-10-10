@@ -15,13 +15,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Auth::routes();
 Route::varbox();
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/puccy', function()
-{
-    echo "haha NO";
+Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/contact', function(){
+    return view("landing.contact");
+});
+Route::get('about', function (){
+    return view("landing.about");
 });

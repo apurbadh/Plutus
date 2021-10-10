@@ -15,3 +15,7 @@ require('./bootstrap');
 require('./components/Example');
 require("./components/Send")
 require('./components/Notification')
+require("./components/pages/HomePage/Home");
+require("./components/Navbar")
+require("./components/pages/Contact/Contact");
+require("./components/pages/Footer/Footer")

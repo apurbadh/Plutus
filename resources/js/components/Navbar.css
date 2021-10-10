@@ -9,13 +9,13 @@
     top: 0;
     z-index: 999;
   }
-  
+
   .navbar-container {
     display: flex;
     justify-content: space-between;
     height: 80px;
   }
-  
+
   .container {
     z-index: 1;
     width: 100%;
@@ -25,7 +25,7 @@
     padding-right: 50px;
     padding-left: 50px;
   }
-  
+
   .navbar-logo {
     color: #fff;
     justify-self: start;
@@ -35,11 +35,11 @@
     display: flex;
     align-items: center;
   }
-  
+
   .navbar-icon {
     margin-right: 0.5rem;
   }
-  
+
   .nav-menu {
     display: flex;
     align-items: center;
@@ -48,16 +48,16 @@
     text-align: center;
     justify-content: end;
   }
-  
+
   .nav-item {
     height: 80px;
     border-bottom: 2px solid transparent;
   }
-  
+
   .nav-item:hover {
     border-bottom: 2px solid #97efdf;
   }
-  
+
   .nav-links {
     color: #fff;
     display: flex;
@@ -66,20 +66,20 @@
     padding: 0.5rem 1rem;
     height: 100%;
   }
-  
+
   .fa-bars {
     color: #fff;
   }
-  
+
   .menu-icon {
     display: none;
   }
-  
+
   @media screen and (max-width: 960px) {
     .NavbarItems {
       position: relative;
     }
-  
+
     .nav-menu {
       display: flex;
       flex-direction: column;
@@ -91,7 +91,7 @@
       opacity: 1;
       transition: all 0.5s ease;
     }
-  
+
     .nav-menu.active {
       background: #68c7f2;
       left: 0;
@@ -99,35 +99,35 @@
       transition: all 0.6s ease;
       z-index: 1;
     }
-  
+
     .nav-links {
       text-align: center;
       padding: 2rem;
       width: 100%;
       display: table;
     }
-  
+
     .nav-links:hover {
       color: #97efdf;
       transform: scale(1.2);
       transition: all 0.3s ease;
     }
-  
+
     .nav-item:hover {
       border: none;
     }
-  
+
     .nav-item {
       width: 100%;
     }
-  
+
     .navbar-logo {
       position: absolute;
       top: 0;
       left: 0;
       transform: translate(70%, 6%);
     }
-  
+
     .menu-icon {
       display: block;
       position: absolute;
@@ -137,12 +137,12 @@
       font-size: 1.8rem;
       cursor: pointer;
     }
-  
+
     .fa-times {
       color: #fff;
       font-size: 2rem;
     }
-  
+
     .nav-btn {
       display: flex;
       justify-content: center;
@@ -151,4 +151,11 @@
       height: 350px;
     }
   }
-  
+
+a:hover{
+    text-decoration: none;
+}
+
+.btn-link:hover{
+    text-decoration: none;
+}

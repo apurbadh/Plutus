@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import ReactDOM from 'react-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { Button } from './Button';
 import './Navbar.css';
@@ -31,40 +31,40 @@ function Navbar() {
         <IconContext.Provider value={{ color: '#fff' }}>
             <div className="navbar">
                 <div className="navbar-container container">
-                    <Link to='/' className="navbar-logo" onClick={closeMobileMenu}>
+                    <a href='/' className="navbar-logo" onClick={closeMobileMenu}>
                         <img className="navbar-icon" src="images/logo.png" height="70" width="70"
                             alt="Plutus" />
-                    </Link>
+                    </a>
                     <div className="menu-icon" onClick={handleClick}>
                         {click ? <FaTimes /> : <FaBars />}
                     </div>
                     <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                         <li className="nav-item">
-                            <Link to='/' className="nav-links" onClick={closeMobileMenu}>
+                            <a href='/' className="nav-links" onClick={closeMobileMenu}>
                                 Home
-                            </Link>
+                            </a>
                         </li>
                         <li className="nav-item">
-                            <Link to='/about' className="nav-links" onClick={closeMobileMenu}>
+                            <a href='/about' className="nav-links" onClick={closeMobileMenu}>
                                 About
-                            </Link>
+                            </a>
                         </li>
                         <li className="nav-item">
-                            <Link to='/contact' className="nav-links" onClick={closeMobileMenu}>
+                <a href='/contact' className="nav-links" onClick={closeMobileMenu}>
                                 Contact
-                            </Link>
+                            </a>
                         </li>
                         <li className="nav-btn">
                             {button ? (
-                                <Link to='/sign-up' className="btn-link">
+                                <a herf='/register' className="btn-link">
                                     <Button buttonStyle='btn--outline'>Sign Up</Button>
-                                </Link>
+                                </a>
                             ): (
-                                <Link className="btn-link" onClick={closeMobileMenu}>
-                                    <Button to='/sign-up' buttonStyle='btn--outline' buttonSize='btn--mobile'>
+                                <a className="btn-link" onClick={closeMobileMenu}>
+                                    <Button href='/register' buttonStyle='btn--outline' buttonSize='btn--mobile'>
                                         Sign Up
                                     </Button>
-                                </Link>
+                                </a>
                             )}
                         </li>
                     </ul>
@@ -76,3 +76,8 @@ function Navbar() {
 }
 
 export default Navbar
+
+if (document.getElementById("navbar-react"))
+{
+    ReactDOM.render(<Navbar/>, document.getElementById("navbar-react"))
+}

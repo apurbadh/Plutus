@@ -1,11 +1,12 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import './Contact.css';
 
 function Contact() {
     return (
         <>
             <div className="container">
-                <div className="title">Log In</div>
+                <div className="title">Contact Us</div>
                 <div className="content">
                 <form action="#">
                     <div className="user-details">
@@ -22,7 +23,7 @@ function Contact() {
                         <textarea type="password" placeholder="Enter Message" required />
                     </div>
                     </div>
-                    
+
                     <div className="button">
                     <input type="submit" value="Send Message" />
                     </div>
@@ -34,3 +35,8 @@ function Contact() {
 }
 
 export default Contact;
+
+if (document.getElementById("contact"))
+{
+    ReactDOM.render(<Contact/>, document.getElementById("contact"))
+}
