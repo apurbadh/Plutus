@@ -2,12 +2,11 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Varbox\Models\User as VarboxUser;
+use App\Models\Transaction;
 
 class User extends VarboxUser
 {
@@ -46,4 +45,14 @@ class User extends VarboxUser
         'email_verified_at' => 'datetime',
         'active' => 'boolean'
     ];
+
+    public function sent()
+    {
+        return $this->hasMany(Transaction::class, "sender_id");
+    }
+
+    public function recieved()
+    {
+        return $this->hasMany(Transaction::class, "reciever_id");
+    }
 }
