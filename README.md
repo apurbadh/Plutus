@@ -15,27 +15,30 @@ All you need to send money to family or friends is the email address of the reci
 Anyone can send money to you using your email address. Your email address is linked to your personal Plutus account. You will receive an push notification whenever you receive a payment and the payment will be shown on your account.
 
 ## Screenshots 
-
+![Banner](./img/min.png)
 ## Technologies 
 Plutus makes use of Laravel, A Backend web framework for web artisans, As frontend framework it makes use of React.
 It also uses MySql, Docker and a few other tools.
 
 ## Setup 
 > Make sure Composer and NPM are installed. 
+1. Clone the repo
 ```bash
 git clone https://github.com/apurbadh/Plutus.git
 ```
+2. Install all required laravel plugins.
 ```bash 
 composer install
 ```
-
+2. Install all required React Plugins
 ```bash 
 npm install
 ```
-
+3. Run the database Docker Container
 ```bash 
 docker-compose up -d 
 ```
+4. Serve the Project
 ``` bash 
 php artisan serve
 ```
