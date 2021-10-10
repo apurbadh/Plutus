@@ -1,5 +1,5 @@
 # Puluts
-> All Wallet For All. 
+> A Wallet For All. 
 ## Table of Contents. 
 
 * [Information](#general-info)
