@@ -35,4 +35,9 @@ class TransactionController extends Controller
         $reciever->save();
         return redirect()->back()->with("message", "Money Sent Sucessfully !");
     }
+
+    public function transaction(Request $request)
+    {
+        return view("transactions");
+    }
 }

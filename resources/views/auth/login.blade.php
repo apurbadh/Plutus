@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container" style="margin: 10rem">
+<div class="container" style="margin-top: 10rem; margin-left: 30rem; margin-bottom:10rem">
 
                   @foreach ($errors->all() as $error)
                      <div class="alert alert-danger" role="alert">

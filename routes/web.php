@@ -29,3 +29,4 @@ Route::get('about', function (){
 });
 Route::get('/send', [App\Http\Controllers\TransactionController::class, 'index']);
 Route::post('/send', [App\Http\Controllers\TransactionController::class, 'sendMoney']);
+Route::get("/transactions", [\App\Http\Controllers\TransactionController::class, "transaction"]);
