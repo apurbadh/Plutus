@@ -17,7 +17,7 @@
         @foreach (auth()->user()->sent as $sent)
             <tr>
                 <td>{{ $loop->index + 1}} </td>
-                <td> {{ $sent->sender->name }}</td>
+                <td> {{ $sent->reciever->name }}</td>
                 <td>{{ $sent->amount }}</td>
                 <td> {{ $sent->created_at }}
             </tr>

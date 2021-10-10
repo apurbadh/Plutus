@@ -2087,6 +2087,8 @@ __webpack_require__(/*! ./components/pages/Contact/Contact */ "./resources/js/co
 
 __webpack_require__(/*! ./components/pages/Footer/Footer */ "./resources/js/components/pages/Footer/Footer.js");
 
+__webpack_require__(/*! ./components/pages/Dashboard/Dashboard */ "./resources/js/components/pages/Dashboard/Dashboard.js");
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -2740,6 +2742,125 @@ function Contact() {
 
 if (document.getElementById("contact")) {
   react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(Contact, {}), document.getElementById("contact"));
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/pages/Dashboard/Dashboard.js":
+/*!**************************************************************!*\
+  !*** ./resources/js/components/pages/Dashboard/Dashboard.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var _Dashboard_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Dashboard.css */ "./resources/js/components/pages/Dashboard/Dashboard.css");
+/* harmony import */ var react_icons_fa__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-icons/fa */ "./node_modules/react-icons/fa/index.esm.js");
+/* harmony import */ var _Button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Button */ "./resources/js/components/Button.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+
+
+
+
+
+function getNotification() {
+  var obj = document.getElementById("notifications").value;
+  return JSON.parse(obj);
+}
+
+function Dashboard() {
+  var _goto = function _goto(url) {
+    window.location = url;
+  };
+
+  var notifications = getNotification();
+  var datas = [];
+  var balance = document.getElementById("user_balance").value;
+  notifications.forEach(function (data, i) {
+    datas.push({
+      index: i,
+      classname: data.data.className,
+      amount: data.data.amount,
+      symbol: data.data.symbol,
+      message: data.data.message
+    });
+
+    if (i == 4) {
+      return;
+    }
+  });
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+      className: "wallet-container text-center",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
+        className: "page-title",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_icons_fa__WEBPACK_IMPORTED_MODULE_5__.FaWallet, {
+          className: "fa fa-align-left"
+        }), " Plutus Wallet"]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+        className: "amount-box text-center",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
+          src: "/images/svg-5.svg"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+          children: "Total Balance"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
+          className: "amount",
+          children: ["$", balance]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+        className: "btn-group text-center",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Button__WEBPACK_IMPORTED_MODULE_3__.Button, {
+          className: "btn",
+          buttonStyle: "btn--outline",
+          buttonColor: "blue",
+          onClick: function onClick() {
+            return _goto("/send");
+          },
+          children: "Send Money"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+        className: "txn-history",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("strong", {
+            children: "Transactions"
+          })
+        }), datas.map(function (data, index) {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+            className: "txn-item",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
+              className: "txn-list",
+              children: [data.message, /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("span", {
+                className: data.classname,
+                children: [data.symbol, " $", data.amount]
+              })]
+            })
+          }, index);
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Button__WEBPACK_IMPORTED_MODULE_3__.Button, {
+          className: "btn",
+          buttonColor: "blue",
+          onClick: function onClick() {
+            return _goto("/transactions");
+          },
+          children: "View All History"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {})]
+      })]
+    })
+  });
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Dashboard);
+
+if (document.getElementById("dashboard-react")) {
+  react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(Dashboard, {}), document.getElementById("dashboard-react"));
 }
 
 /***/ }),
@@ -7517,6 +7638,30 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, "\n.container .title{\n    font-size: 25px;\n    font-weight: 500;\n    position: relative;\n    margin-top: 15px;\n  }\n  .container .title::before{\n    content: \"\";\n    position: absolute;\n    left: 0;\n    bottom: 0;\n    height: 3px;\n    width: 30px;\n    border-radius: 5px;\n    background: linear-gradient(135deg, #497efb, #97efdf);\n  }\n  .content form .user-details{\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: space-between;\n    margin: 20px 0 12px 0;\n  }\n  form .user-details .input-box{\n    margin-bottom: 15px;\n    width: calc(100% / 2 - 20px);\n  }\n  form .input-box span.details{\n    display: block;\n    font-weight: 500;\n    margin-bottom: 5px;\n  }\n  .user-details .input-box input{\n    height: 45px;\n    width: 100%;\n    outline: none;\n    font-size: 16px;\n    border-radius: 5px;\n    padding-left: 15px;\n    border: 1px solid #ccc;\n    border-bottom-width: 2px;\n    transition: all 0.3s ease;\n  }\n  .user-details .input-box textarea{\n    height: 105px;\n    width: 100%;\n    outline: none;\n    font-size: 16px;\n    border-radius: 5px;\n    padding-left: 15px;\n    padding-top: 10px;\n    border: 1px solid #ccc;\n    border-bottom-width: 2px;\n    transition: all 0.3s ease;\n  }\n  .user-details .input-box input:focus,\n  .user-details .input-box input:valid{\n    border-color: #97efdf;\n  }\n\n   form .category{\n     display: flex;\n     width: 80%;\n     margin: 14px 0 ;\n     justify-content: space-between;\n   }\n   form .category label{\n     display: flex;\n     align-items: center;\n     cursor: pointer;\n   }\n   form .category label .dot{\n    height: 18px;\n    width: 18px;\n    border-radius: 50%;\n    margin-right: 10px;\n    background: #d9d9d9;\n    border: 5px solid transparent;\n    transition: all 0.3s ease;\n  }\n   #dot-1:checked ~ .category label .one,\n   #dot-2:checked ~ .category label .two{\n     background: #97efdf;\n     border-color: #497efb;\n   }\n   form input[type=\"radio\"]{\n     display: none;\n   }\n   form .button{\n     height: 45px;\n     margin: 35px 0\n   }\n   form .button input{\n     height: 100%;\n     width: 100%;\n     border-radius: 5px;\n     border: none;\n     color: #fff;\n     font-size: 18px;\n     font-weight: 500;\n     letter-spacing: 1px;\n     cursor: pointer;\n     transition: all 0.3s ease;\n     background: linear-gradient(135deg, #497efb, #97efdf);\n   }\n   form .button input:hover{\n    /* transform: scale(0.99); */\n    background: linear-gradient(-135deg, #497efb, #97efdf);\n    }\n   @media(max-width: 584px){\n   .container{\n    max-width: 100%;\n  }\n  form .user-details .input-box{\n      margin-bottom: 15px;\n      width: 100%;\n    }\n    form .category{\n      width: 100%;\n    }\n    .content form .user-details{\n      max-height: 300px;\n      overflow-y: scroll;\n    }\n    .user-details::-webkit-scrollbar{\n      width: 5px;\n    }\n    }\n    @media(max-width: 459px){\n    .container .content .category{\n      flex-direction: column;\n    }\n  }\n  ", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/pages/Dashboard/Dashboard.css":
+/*!*************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/pages/Dashboard/Dashboard.css ***!
+  \*************************************************************************************************************************************************************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".wallet-container{\n    background: #fff;\n    width: 100%;\n    font-size: 15px;\n    color: #000;\n    padding: 20px 300px;\n    text-align: center;\n}\n\n.page-title{\n    font-size: 30px;\n    margin-bottom: 20px;\n}\n\n\n.amount-box img{\n    width: 80px;\n    margin-bottom: 10px;\n}\n\n.amount{\n    font-size: 35px;\n}\n\n.amount-box p{\n    margin-top: 10px;\n    margin-bottom: 10px;\n}\n.btn-group .btn{\n    margin: 8px;\n    border-radius: 20px;\n    font-size: 20px;\n}\n.btn:hover{\n    background: #17203f;\n    color: #fff;\n}\n.txn-history{\n    margin-top: 40px;\n}\n.txn-item{\n    text-align: left;\n}\n.txn-list{\n    background-color: #dcf0f8;\n    padding: 12px 10px;\n    color: #777;\n    font-size: 14px;\n    margin: 7px 0;\n}\n.debit-amount{\n    color: red;\n    float: right;\n}\n.credit-amount{\n    color: green;\n    float: right;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -76511,6 +76656,36 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Contact_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ }),
+
+/***/ "./resources/js/components/pages/Dashboard/Dashboard.css":
+/*!***************************************************************!*\
+  !*** ./resources/js/components/pages/Dashboard/Dashboard.css ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Dashboard_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./Dashboard.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/js/components/pages/Dashboard/Dashboard.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Dashboard_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Dashboard_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ }),
 

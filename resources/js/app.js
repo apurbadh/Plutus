@@ -19,3 +19,4 @@ require("./components/pages/HomePage/Home");
 require("./components/Navbar")
 require("./components/pages/Contact/Contact");
 require("./components/pages/Footer/Footer")
+require("./components/pages/Dashboard/Dashboard")

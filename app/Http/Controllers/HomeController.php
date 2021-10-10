@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index(Request $req)
     {
-        $user = Auth::user();
-        return view('dashboard', ["user" => $user]);
+        $notifications = Auth::user()->notifications;
+        return view('dashboard', ["notifications" => $notifications]);
     }
 }
