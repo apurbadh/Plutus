@@ -1,0 +1,58 @@
+.wallet-container{
+    background: #fff;
+    width: 100%;
+    font-size: 15px;
+    color: #000;
+    padding: 20px 300px;
+    text-align: center;
+}
+
+.page-title{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+
+.amount-box img{
+    width: 80px;
+    margin-bottom: 10px;
+}
+
+.amount{
+    font-size: 35px;
+}
+
+.amount-box p{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.btn-group .btn{
+    margin: 8px;
+    border-radius: 20px;
+    font-size: 20px;
+}
+.btn:hover{
+    background: #17203f;
+    color: #fff;
+}
+.txn-history{
+    margin-top: 40px;
+}
+.txn-item{
+    text-align: left;
+}
+.txn-list{
+    background-color: #dcf0f8;
+    padding: 12px 10px;
+    color: #777;
+    font-size: 14px;
+    margin: 7px 0;
+}
+.debit-amount{
+    color: red;
+    float: right;
+}
+.credit-amount{
+    color: green;
+    float: right;
+}
