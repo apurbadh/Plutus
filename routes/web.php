@@ -27,3 +27,5 @@ Route::get('/contact', function(){
 Route::get('about', function (){
     return view("landing.about");
 });
+Route::get('/send', [App\Http\Controllers\TransactionController::class, 'index']);
+Route::post('/send', [App\Http\Controllers\TransactionController::class, 'sendMoney']);

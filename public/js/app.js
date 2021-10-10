@@ -2613,7 +2613,7 @@ function Send(props) {
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", (_jsx3 = {
           type: "email",
           className: "input"
-        }, _defineProperty(_jsx3, "className", "form-control"), _defineProperty(_jsx3, "aria-label", "Small"), _defineProperty(_jsx3, "aria-describedby", "inputGroup-sizing-sm"), _jsx3))]
+        }, _defineProperty(_jsx3, "className", "form-control"), _defineProperty(_jsx3, "aria-label", "Small"), _defineProperty(_jsx3, "aria-describedby", "inputGroup-sizing-sm"), _defineProperty(_jsx3, "name", "reciever"), _jsx3))]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         className: "input-group input-group-default mb-3",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
@@ -2629,9 +2629,10 @@ function Send(props) {
           className: "input"
         }, _defineProperty(_jsx4, "className", "form-control"), _defineProperty(_jsx4, "aria-label", "Small"), _defineProperty(_jsx4, "aria-describedby", "inputGroup-sizing-sm"), _defineProperty(_jsx4, "onChange", function onChange() {
           return setSendMoney(amount.current.value);
-        }), _jsx4))]
+        }), _defineProperty(_jsx4, "name", "amount"), _jsx4))]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
         className: "btn btn-primary",
+        type: "submit",
         children: "Send"
       })]
     })]

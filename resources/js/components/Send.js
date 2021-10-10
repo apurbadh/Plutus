@@ -43,17 +43,17 @@ function Send(props)
                 <div className="input-group-prepend">
     <span className="input-group-text" id="inputGroup-sizing-default">Send To</span>
   </div>
-            <input type="email" className="input" className="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"/>
+            <input type="email" className="input" className="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" name="reciever"/>
 
             </div>
              <div className="input-group input-group-default mb-3">
                 <div className="input-group-prepend">
     <span className="input-group-text" id="inputGroup-sizing-default">Send Money</span>
   </div>
-            <input ref={amount} type="number" className="input" className="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" onChange={() => setSendMoney(amount.current.value)}/>
+            <input ref={amount} type="number" className="input" className="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" onChange={() => setSendMoney(amount.current.value)} name="amount"/>
 
             </div>
-            <button className="btn btn-primary">Send</button>
+            <button className="btn btn-primary" type="submit">Send</button>
         </div>
     </div>
 }

@@ -19,4 +19,10 @@ class Transaction extends Model
     {
         return $this->belongsTo(User::class, "reciever_id");
     }
+
+    protected $fillable = [
+        "sender_id",
+        "reciever_id",
+        "amount"
+    ];
 }
