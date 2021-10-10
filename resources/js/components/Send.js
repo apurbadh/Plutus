@@ -5,24 +5,25 @@ import {useState, useEffect, useRef} from "react"
 function Send(props)
 {
     const [remaningBalance, setRemainingBalance] = useState(parseFloat(props.value))
+    const originalAmount = parseInt(props.value)
     const [sendMoney, setSendMoney] = useState(0);
     const amount = useRef()
     useEffect(() => {
         if (sendMoney === ''){
-            setRemainingBalance(parseInt(props.value))
+            setRemainingBalance(originalAmount)
             return
         }
         let amt = parseInt(sendMoney)
         if (amt !== NaN){
-            if (amt > remaningBalance){
-                amount.current.value = parseInt(props.value)
+            if (amt > originalAmount){
+                amount.current.value = originalAmount
                 setRemainingBalance(0)
                 return
             }
-            setRemainingBalance(remaningBalance - amt)
+            setRemainingBalance(originalAmount - amt)
         }
         else{
-            setRemainingBalance(parseInt(props.value))
+            setRemainingBalance(originalAmount)
         }
     }, [sendMoney])
     return <div className="card">

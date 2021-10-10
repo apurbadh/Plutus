@@ -22,6 +22,9 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
+    @auth
+        <input type="hidden" id="auth" value="true"/>
+    @endauth
     <div id="app">
         <div id="navbar-react"></div>
             @yield('content')

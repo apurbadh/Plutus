@@ -2350,6 +2350,12 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 function Navbar() {
+  var goToSignUp = function goToSignUp() {
+    window.location = "/register";
+  };
+
+  var auth = document.getElementById("auth");
+
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
       _useState2 = _slicedToArray(_useState, 2),
       click = _useState2[0],
@@ -2389,6 +2395,7 @@ function Navbar() {
         className: "navbar",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
           className: "navbar-container container",
+          height: "50px",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
             href: "/",
             className: "navbar-logo",
@@ -2432,20 +2439,27 @@ function Navbar() {
               })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("li", {
               className: "nav-btn",
-              children: button ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
+              children: button ? auth ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
+                href: "/dashboard",
+                className: "btn-link",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Button__WEBPACK_IMPORTED_MODULE_2__.Button, {
+                  buttonStyle: "btn--outline",
+                  children: "Dashboard"
+                })
+              }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
                 herf: "/register",
                 className: "btn-link",
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Button__WEBPACK_IMPORTED_MODULE_2__.Button, {
                   buttonStyle: "btn--outline",
+                  onClick: goToSignUp,
                   children: "Sign Up"
                 })
               }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
                 className: "btn-link",
-                onClick: closeMobileMenu,
                 children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_Button__WEBPACK_IMPORTED_MODULE_2__.Button, {
                   href: "/register",
+                  onClick: goToSignUp,
                   buttonStyle: "btn--outline",
-                  buttonSize: "btn--mobile",
                   children: "Sign Up"
                 })
               })
@@ -2538,6 +2552,8 @@ function Send(props) {
       remaningBalance = _useState2[0],
       setRemainingBalance = _useState2[1];
 
+  var originalAmount = parseInt(props.value);
+
   var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
       _useState4 = _slicedToArray(_useState3, 2),
       sendMoney = _useState4[0],
@@ -2546,22 +2562,22 @@ function Send(props) {
   var amount = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)();
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     if (sendMoney === '') {
-      setRemainingBalance(parseInt(props.value));
+      setRemainingBalance(originalAmount);
       return;
     }
 
     var amt = parseInt(sendMoney);
 
     if (amt !== NaN) {
-      if (amt > remaningBalance) {
-        amount.current.value = parseInt(props.value);
+      if (amt > originalAmount) {
+        amount.current.value = originalAmount;
         setRemainingBalance(0);
         return;
       }
 
-      setRemainingBalance(remaningBalance - amt);
+      setRemainingBalance(originalAmount - amt);
     } else {
-      setRemainingBalance(parseInt(props.value));
+      setRemainingBalance(originalAmount);
     }
   }, [sendMoney]);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {

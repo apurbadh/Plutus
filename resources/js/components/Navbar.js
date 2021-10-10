@@ -6,6 +6,10 @@ import './Navbar.css';
 import { IconContext } from 'react-icons/lib';
 
 function Navbar() {
+    const goToSignUp = () => {
+        window.location = "/register"
+    }
+    const auth = document.getElementById("auth");
     const [click, setClick] = useState(false);
     const [button, setButton] = useState(true);
 
@@ -30,7 +34,7 @@ function Navbar() {
         <>
         <IconContext.Provider value={{ color: '#fff' }}>
             <div className="navbar">
-                <div className="navbar-container container">
+                <div className="navbar-container container" height="50px">
                     <a href='/' className="navbar-logo" onClick={closeMobileMenu}>
                         <img className="navbar-icon" src="images/logo.png" height="70" width="70"
                             alt="Plutus" />
@@ -56,12 +60,13 @@ function Navbar() {
                         </li>
                         <li className="nav-btn">
                             {button ? (
-                                <a herf='/register' className="btn-link">
-                                    <Button buttonStyle='btn--outline'>Sign Up</Button>
+                                auth ? <a href="/dashboard" className="btn-link"><Button buttonStyle='btn--outline'>Dashboard</Button></a>:
+                                <a herf="/register" className="btn-link">
+                                    <Button buttonStyle='btn--outline' onClick={goToSignUp} >Sign Up</Button>
                                 </a>
                             ): (
-                                <a className="btn-link" onClick={closeMobileMenu}>
-                                    <Button href='/register' buttonStyle='btn--outline' buttonSize='btn--mobile'>
+                                <a className="btn-link">
+                                    <Button href="/register" onClick={goToSignUp} buttonStyle='btn--outline'>
                                         Sign Up
                                     </Button>
                                 </a>

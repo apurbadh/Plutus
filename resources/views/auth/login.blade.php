@@ -33,6 +33,7 @@
                     <input type="submit" value="Login" />
                     </div>
                 </form>
+                <a href="/register">Not registered yet ?</a>
                 </div>
 </div>
 @endsection
