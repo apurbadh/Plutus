@@ -24,7 +24,7 @@ class TransactionController extends Controller
     {
         $request->validate([
             "reciever" => "required|exists:users,email|not_in:".$request->user()->email,
-            "amount" => "required|lte:".$request->user()->balance,
+            "amount" => "required|lte:".$request->user()->balance."|gt:0",
         ]);
         $amount = (int) $request->amount;
         $sender = $request->user();

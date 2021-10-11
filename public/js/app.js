@@ -2583,6 +2583,10 @@ function Send(props) {
         amount.current.value = originalAmount;
         setRemainingBalance(0);
         return;
+      } else if (amt < 0) {
+        amount.current.value = 0;
+        setRemainingBalance(originalAmount);
+        return;
       }
 
       setRemainingBalance(originalAmount - amt);
